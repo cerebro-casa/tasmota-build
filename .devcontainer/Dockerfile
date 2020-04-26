@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         software-properties-common \
         gpg-agent \
         git \
+        git-lfs \
         sudo \
     && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - \
     && add-apt-repository "deb https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" \
