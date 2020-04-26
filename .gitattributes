@@ -1,1 +1,2 @@
 *.bin filter=lfs diff=lfs merge=lfs binary
+*.gz filter=lfs diff=lfs merge=lfs binary
