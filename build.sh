@@ -20,7 +20,7 @@ git -C /src/tasmota rev-parse HEAD > /share/${1}/bin/commit.txt
 cd /src/tasmota; pio run -j 10 
 cp .pioenvs/tasmota/firmware.bin /share/${1}/bin/tasmota.bin
 cp .pioenvs/tasmota-minimal/firmware.bin /share/${1}/bin/tasmota-minimal.bin
-#gzip -9 -k --rsyncable /share/${1}/bin/tasmota.bin
-#gzip -9 -k --rsyncable /share/${1}/bin/tasmota-minimal.bin
+[ -f build_output/firmware/tasmota.bin.gz ] && gzip -9 -k --rsyncable /share/${1}/bin/tasmota.bin
+[ -f build_output/firmware/tasmota-minimal.bin.gz ] && gzip -9 -k --rsyncable /share/${1}/bin/tasmota-minimal.bin
 echo "Completed.  Firmware listing follows..."
 ls -al /share/${1}/bin/
